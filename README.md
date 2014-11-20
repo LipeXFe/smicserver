@@ -2,7 +2,7 @@ smicserver
 ==========
 
 SOFTWARE MANAGEMENT INFORMATION COMPUTING
-*** Felipe Augusto ***
+
 
 Pré-requisito:
 - Servidor Tomcat
