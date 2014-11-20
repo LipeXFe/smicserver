@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="qr-2.1.0-min.js"></script>
+		 <script type="text/javascript" src="qrcodesvg.js"></script>
+
+		    <link rel="stylesheet" href="../js/jquery.mobile-1.4.2.min.css" />
+		<script src="../js/jquery.mobile-1.4.2.min.js"></script>
+		<link rel="../stylesheet" type="text/css" href="js/style.css" />
+
+		 <!--<script type="text/javascript" src="qrcodesvg-min.js"></script>-->
+		<script type="text/javascript">
+			function generate() {
+				document.getElementById("qrcode").innerHTML = "";
+				
+				var qrcodesvg	= null;
+				var qrtest		= 0;
+				var input		= document.getElementById("qrinput").value;
+				var size		= 250;
+				var ecclevel	= 1;
+				
+				 //classic
+					var qrcodesvg 	= new Qrcodesvg( input, "qrcode", size);
+					
+					qrcodesvg.draw();
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+		
+			<h1>Gerador de QRCode</h1><br>
+			
+		<div id="qrcode"  style="with:100%; height:100%"></div>
+		
+		<script type="text/javascript">
+			var qrcodesvg 	= new Qrcodesvg( "SMIC!", "qrcode", 250);
+			
+			qrcodesvg.draw();
+		</script>
+		<br><br>
+			<center style="position:absolute;">
+	<div id="corpo"  style="padding: 0 0px 0px 58%;">
+	
+		<input id="qrinput"  style="float:left; border:solid 2px; width:200px;"/>
+		<input type="button" value="Criar" style=" float:left;  background:black; color:white; height:30px; border: solid 2px; width:50px;"  onclick="generate()"/>
+		</div>
+		</center>
+	
+		
+		</center>
+	</body>
+</html>
