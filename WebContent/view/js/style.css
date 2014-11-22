@@ -61,6 +61,14 @@ body {
     color: #fff;
     text-decoration:none;
 }
+#pimg{
+	 position:absolute;     
+    left:5%;
+    top:20%;
+	font-size: 30px;
+    color: #fff;
+    text-decoration:none;
+}
 #principal p:hover{
 	background:#fff;
 	color:#222;

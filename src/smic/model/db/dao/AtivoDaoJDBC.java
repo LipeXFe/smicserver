@@ -124,13 +124,13 @@ public class AtivoDaoJDBC implements AtivoDao {
 					// 2. statement - sql
 						
 					String sql = "select m.type, m.speed, m.capacity from memories m, bios b where "
-							+ " m.hardware_id = b.hardware_id and  b.ssn = 'BRG217F42C' ";
+							+ " m.hardware_id = b.hardware_id and  b.ssn = ? ";
 					
 					PreparedStatement st = con.prepareStatement(sql);
-				//	st.setString(1, idBusca);
+					st.setString(1, idBusca);
 					
 					//Statement st = con.createStatement();
-					ResultSet rs = st.executeQuery(sql);
+					ResultSet rs = st.executeQuery();
 
 					while (rs.next()) {  // tratar erro caso retorne nulo
 						
@@ -176,13 +176,13 @@ public class AtivoDaoJDBC implements AtivoDao {
 							String sql = "select  d.letter, d.type, d.total, d.free, s.name from drives d,"
 									+ " storages  s, bios b "
 									+ "	where d.hardware_id =  s.hardware_id  and d.hardware_id= b.hardware_id"
-									+ " and b.ssn = 'BRG217F42C'";
+									+ " and b.ssn = ? ";
 							
 						PreparedStatement st = con.prepareStatement(sql);
-							//st.setString(1, idBusca);
+							st.setString(1, idBusca);
 							
 							//Statement st = con.createStatement();
-							ResultSet rs = st.executeQuery(sql);
+							ResultSet rs = st.executeQuery();
 
 							while (rs.next()) {  // tratar erro caso retorne nulo
 								
@@ -230,13 +230,13 @@ public class AtivoDaoJDBC implements AtivoDao {
 								
 							String sql = "select v.name, v.chipset, v.memory, v.resolution "
 									+ " from videos v,  bios b"
-									+ " where v.hardware_id = b.hardware_id and b.ssn = 'BRG217F42C'";
+									+ " where v.hardware_id = b.hardware_id and b.ssn = ?";
 							
 							PreparedStatement st = con.prepareStatement(sql);
-						//	st.setString(1, idBusca);
+							st.setString(1, idBusca);
 							
 							//Statement st = con.createStatement();
-							ResultSet rs = st.executeQuery(sql);
+							ResultSet rs = st.executeQuery();
 
 							while (rs.next()) {  // tratar erro caso retorne nulo
 								
@@ -281,13 +281,13 @@ public class AtivoDaoJDBC implements AtivoDao {
 							// 2. statement - sql
 								
 							String sql = "select s.name, s.manufacturer, s.description from sounds s, bios b "
-									+ "where s.hardware_id = b.hardware_id and b.ssn = 'BRG217F42C'";
+									+ "where s.hardware_id = b.hardware_id and b.ssn = ?";
 							
 							PreparedStatement st = con.prepareStatement(sql);
-						//	st.setString(1, idBusca);
+							st.setString(1, idBusca);
 							
 							//Statement st = con.createStatement();
-							ResultSet rs = st.executeQuery(sql);
+							ResultSet rs = st.executeQuery();
 							System.out.println(rs);
 
 							while (rs.next()) {  // tratar erro caso retorne nulo
@@ -333,13 +333,13 @@ public class AtivoDaoJDBC implements AtivoDao {
 								
 							String sql = "select n.description, n.macaddr, n.ipaddress, n.ipmask, n.ipgateway"
 									+ " from networks n, bios b "
-									+ " where n.hardware_id = b.hardware_id and b.ssn = 'BRG217F42C'";
+									+ " where n.hardware_id = b.hardware_id and b.ssn = ?";
 							
 							PreparedStatement st = con.prepareStatement(sql);
-						//	st.setString(1, idBusca);
+							st.setString(1, idBusca);
 							
 							//statement st = con.createStatement();
-							ResultSet rs = st.executeQuery(sql);
+							ResultSet rs = st.executeQuery();
 
 							while (rs.next()) {  // tratar erro caso retorne nulo
 								
